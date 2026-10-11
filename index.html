@@ -8,12 +8,25 @@
     <title>Broke But Functional — Survive the Month</title>
     <meta name="description" content="A gamified 30-day financial survival simulator and real-world crisis burn-rate calculator for students and young adults." />
     <meta name="keywords" content="budgeting, survival game, burn rate calculator, broke student hacks, frontend arena" />
+    <meta name="robots" content="index, follow" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <meta property="og:title" content="Broke But Functional — Survive the Month" />
     <meta property="og:description" content="Survive the 30-day financial gauntlet without losing your mind." />
     <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Broke But Functional",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Interactive 30-Day Financial Survival Simulator and Burn-Rate Calculator."
+      }
+    </script>
   </head>
-  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
-    <div id="root"></div>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950" role="application">
+    <div id="root" role="main"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -4,8 +4,8 @@ import { Volume2, VolumeX, RotateCcw, Flame, ShieldAlert, Sparkles, Calculator, 
 import { playSound } from '../utils/audio';
 
 interface HeaderProps {
-  activeTab: 'game' | 'calculator' | 'pantry' | 'tracker';
-  setActiveTab: (tab: 'game' | 'calculator' | 'pantry' | 'tracker') => void;
+  activeTab: 'game' | 'calculator' | 'pantry' | 'tracker' | 'ai';
+  setActiveTab: (tab: 'game' | 'calculator' | 'pantry' | 'tracker' | 'ai') => void;
   currency: Currency;
   setCurrency: (c: Currency) => void;
   soundEnabled: boolean;
@@ -137,6 +137,21 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Receipt className="w-3.5 h-3.5" />
             Expense Logger
+          </button>
+
+          <button
+            onClick={() => {
+              playSound('click');
+              setActiveTab('ai');
+            }}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
+              activeTab === 'ai'
+                ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-md shadow-indigo-500/20 font-bold'
+                : 'text-purple-300 hover:text-white hover:bg-slate-900'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+            AI Coach
           </button>
         </nav>
 

@@ -4,12 +4,13 @@ import { SurvivalGame } from './components/SurvivalGame';
 import { BurnRateCalculator } from './components/BurnRateCalculator';
 import { DesperationPantry } from './components/DesperationPantry';
 import { ExpenseTracker } from './components/ExpenseTracker';
+import { AiSurvivalCoach } from './components/AiSurvivalCoach';
 import { Currency, PlayerStats, GameHistoryEntry } from './types';
 import { INITIAL_STATS } from './data/dilemmas';
 import { setSoundEnabled, playSound } from './utils/audio';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<'game' | 'calculator' | 'pantry' | 'tracker'>('game');
+  const [activeTab, setActiveTab] = useState<'game' | 'calculator' | 'pantry' | 'tracker' | 'ai'>('game');
   const [currency, setCurrency] = useState<Currency>('INR');
   const [soundOn, setSoundOn] = useState<boolean>(true);
 
@@ -119,6 +120,14 @@ export function App() {
 
         {activeTab === 'tracker' && (
           <ExpenseTracker currency={currency} />
+        )}
+
+        {activeTab === 'ai' && (
+          <AiSurvivalCoach
+            stats={stats}
+            currentDay={currentDay}
+            currency={currency}
+          />
         )}
       </main>
 
