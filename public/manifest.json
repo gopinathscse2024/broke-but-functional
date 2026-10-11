@@ -1,0 +1,15 @@
+{
+  "short_name": "BrokeFunctional",
+  "name": "Broke But Functional — Survive the Month",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "display": "standalone"
+}

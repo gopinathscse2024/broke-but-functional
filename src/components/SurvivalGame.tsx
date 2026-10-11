@@ -241,7 +241,14 @@ export const SurvivalGame: React.FC<SurvivalGameProps> = ({
 
         {/* 30-Day Step Progress Bar */}
         <div className="space-y-1.5">
-          <div className="h-2.5 w-full bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
+          <div
+            className="h-2.5 w-full bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800"
+            role="progressbar"
+            aria-valuenow={currentDay}
+            aria-valuemin={1}
+            aria-valuemax={30}
+            aria-label="30-day month survival progress"
+          >
             <div
               className="h-full bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-500 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${(currentDay / 30) * 100}%` }}
@@ -283,7 +290,14 @@ export const SurvivalGame: React.FC<SurvivalGameProps> = ({
             </span>
             <span className="font-mono font-bold text-slate-300">{stats.sanity}%</span>
           </div>
-          <div className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800">
+          <div
+            className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800"
+            role="progressbar"
+            aria-valuenow={stats.sanity}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Sanity percentage"
+          >
             <div
               className={`h-full transition-all duration-500 ${
                 stats.sanity > 50 ? 'bg-purple-500' : stats.sanity > 25 ? 'bg-amber-500' : 'bg-rose-500'
@@ -304,7 +318,14 @@ export const SurvivalGame: React.FC<SurvivalGameProps> = ({
             </span>
             <span className="font-mono font-bold text-slate-300">{stats.energy}%</span>
           </div>
-          <div className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800">
+          <div
+            className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800"
+            role="progressbar"
+            aria-valuenow={stats.energy}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Physical energy percentage"
+          >
             <div
               className={`h-full transition-all duration-500 ${
                 stats.energy > 50 ? 'bg-amber-500' : stats.energy > 25 ? 'bg-orange-500' : 'bg-rose-500'
@@ -325,7 +346,14 @@ export const SurvivalGame: React.FC<SurvivalGameProps> = ({
             </span>
             <span className="font-mono font-bold text-slate-300">{stats.social}%</span>
           </div>
-          <div className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800">
+          <div
+            className="h-2 w-full bg-slate-950 rounded-full overflow-hidden my-2 border border-slate-800"
+            role="progressbar"
+            aria-valuenow={stats.social}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Social connections percentage"
+          >
             <div
               className={`h-full transition-all duration-500 ${
                 stats.social > 50 ? 'bg-sky-500' : stats.social > 25 ? 'bg-amber-500' : 'bg-rose-500'
